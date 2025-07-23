@@ -1,0 +1,179 @@
+/* 响应式等比缩放主容器 */
+.scale-root {
+  width: 1440px; /* 你的设计宽度，可根据实际设计稿调整 */
+  margin: 0 auto;
+  transform-origin: top left;
+}
+
+@media (max-width: 1440px) {
+  .scale-root {
+    transform: scale(calc(100vw / 1440));
+  }
+}
+
+body, html {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  color: #222;
+  min-height: 100vh;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  background: rgba(34, 34, 34, 0.95);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  background: linear-gradient(45deg, #1db954, #1ed760);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.nav-links {
+  display: flex;
+  gap: 1.2rem;
+  list-style: none;
+}
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+}
+.nav-links li a.router-link-active {
+  color: #1db954;
+  background: rgba(29, 185, 84, 0.1);
+}
+.nav-links li a:hover {
+  color: #1db954;
+  background: rgba(29, 185, 84, 0.1);
+  transform: translateY(-2px);
+}
+.nav-auth {
+  color: #fff;
+  font-size: 1rem;
+}
+.nav-auth a {
+  color: #1db954;
+  text-decoration: none;
+  margin: 0 0.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+.nav-auth a:hover {
+  background: rgba(29, 185, 84, 0.1);
+  transform: translateY(-2px);
+}
+main {
+  flex: 1;
+  max-width: 1300px;
+  margin: 2rem auto 0 auto;
+  padding: 0 1rem 80px 1rem;
+  position: relative;
+  z-index: 1;
+}
+footer {
+  background: rgba(34, 34, 34, 0.95);
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+.hero {
+  background: linear-gradient(135deg, rgba(29, 185, 84, 0.9) 0%, rgba(30, 215, 96, 0.9) 100%);
+  color: #fff;
+  padding: 3rem 2rem;
+  border-radius: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(29, 185, 84, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+.hero p {
+  font-size: 1.3rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+.music-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: flex-start;
+}
+input[type="text"], input[type="password"], input[type="file"] {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+  padding: 0.7em;
+  border-radius: 0.5em;
+  border: 1.5px solid #bdbdbd;
+  font-size: 1em;
+  outline: none;
+  margin-bottom: 0.2em;
+  transition: border 0.2s;
+}
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.7rem;
+    margin-top: 0.7rem;
+  }
+  main {
+    padding: 0 0.5rem 80px 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .navbar {
+    padding: 0.7rem 0.5rem;
+  }
+  .hero h1 {
+    font-size: 1.3rem;
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+  .music-list {
+    flex-direction: column;
+    gap: 1rem;
+  }
+} 
